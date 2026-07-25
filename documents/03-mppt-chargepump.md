@@ -22,7 +22,7 @@ A **Verilog-A single-diode-equivalent model** was developed for the PV cell, cap
 - Resistive losses
 - Current-voltage nonlinearity
 
-The PV cell's voltage and current outputs feed the MPPT control algorithm; PV current is sensed via a small sensing resistor. The model was implemented and validated in the Cadence environment (see `images/3.1-PV.png` and `images/3.2-PV_plot.png`).
+The PV cell's voltage and current outputs feed the MPPT control algorithm; PV current is sensed via a small sensing resistor. The model was implemented and validated in the Cadence environment (see ![Photovoltaic Cell Model](..images/3.1-PV.png) and [](..images/3.2-PV_plot.png).
 
 ### 3.3.1 Dataset and Model Development
 
