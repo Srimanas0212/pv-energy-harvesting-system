@@ -13,7 +13,7 @@ A **top-down** methodology was used: starting from output voltage requirements a
 3. The error amplifier compares the feedback voltage to `Vref`, producing a buffered output that drives the pass transistor gate. Buffering isolates the high-gain amplifier stage and supplies sufficient drive current to charge the pass transistor's gate capacitance.
 4. The pass transistor is sized for the required load current while minimizing dropout voltage.
 
-See `images/fig4.1-ldo-schematic.png` for the full schematic.
+See [Schematic diagram of the circuit](../images/4.1-LDO.png) for the full schematic.
 
 ```
 Vout = Vref · (1 + R1 / R_effective)
@@ -31,7 +31,7 @@ ID = (1/2) · μp · Cox · (W/L) · (VSG − |VTH|)²
 ```
 where `μp` = hole mobility, `Cox` = oxide capacitance, `W/L` = transistor aspect ratio.
 
-As input voltage rises or falls, the pass transistor adjusts `VDS` to hold the output constant. See `images/fig4.2-pmos-pass-transistor.png`.
+As input voltage rises or falls, the pass transistor adjusts `VDS` to hold the output constant. See [PMOS pass transistor](../images/4.2-Pass_Element.png)
 
 ## 4.4 Error Amplifier
 
@@ -39,7 +39,7 @@ The error amplifier compares the feedback voltage to `Vref` and controls the pas
 
 ### 4.4.1 Topology
 
-A **two-stage CMOS operational amplifier** with an NMOS differential input stage and a common-source gain stage (see `images/fig4.3-error-amplifier.png`). The NMOS input stage was chosen for its larger transconductance per unit of bias current. First stage: NMOS differential pair with PMOS current-mirror load.
+A **two-stage CMOS operational amplifier** with an NMOS differential input stage and a common-source gain stage (see [Error Amplifier](../images/4.3-Error_Amplifier.png)). The NMOS input stage was chosen for its larger transconductance per unit of bias current. First stage: NMOS differential pair with PMOS current-mirror load.
 
 ### 4.4.2 Small Signal Analysis
 
@@ -50,7 +50,8 @@ where `gm1`, `gm2` are the transconductances of the input NMOS and second-stage 
 
 All transistors must operate in saturation for proper gain and linearity. Both the feedback voltage and the reference voltage must remain within the amplifier's input common-mode range.
 
-**Measured performance** (see `images/fig4.4-eaamp-frequency-response.png`, `images/fig4.5-eaamp-cmrr.png`):
+**Measured performance** (see [Frequency Response of the Error Amplifier](../images/4.4-NMOS_Gain.png) and [Common-Mode Rejection Ratio](../images/4.5-NMOS_CMRR.png)
+):
 
 | Parameter | Value |
 |---|---|
@@ -64,7 +65,8 @@ The feedback network senses and scales down the output voltage before comparing 
 
 ### 4.5.1 Topology
 
-A digitally programmable resistor divider (see `images/fig4.6-feedback-resistors.png`) output voltage `VO` is controlled by varying the resistance of the lower resistor string via `S1`/`S0`.
+A digitally programmable resistor divider (see [Feedback Resistors](../images/4.6-Feedback.png)
+) output voltage `VO` is controlled by varying the resistance of the lower resistor string via `S1`/`S0`.
 
 ### 4.5.2 Programming Logic
 
@@ -89,7 +91,7 @@ The current-mode approach combines:
 
 ### 4.6.1 Topology - Banba BGR
 
-A **Banba topology** was used as it's a widely adopted low-voltage BGR design that performs well at limited supply levels while remaining highly temperature-stable. Unlike traditional voltage-summation bandgap circuits, Banba uses a current-based scheme, well suited to CMOS technology and enabling sub-1V operation (see `images/fig4.7-banba-bgr.png`).
+A **Banba topology** was used as it's a widely adopted low-voltage BGR design that performs well at limited supply levels while remaining highly temperature-stable. Unlike traditional voltage-summation bandgap circuits, Banba uses a current-based scheme, well suited to CMOS technology and enabling sub-1V operation (see [Banba BGR](../images/4.7-BGR.png)).
 
 The Banba circuit generates a temperature-independent current by summing a CTAT current (from `VBE`) and a PTAT current (from `ΔVBE` between two BJTs at different current densities):
 
@@ -106,9 +108,10 @@ VO = Iref · R4 = (R4/R2) · (VBE1 + (R2/R1) · VT · ln(N))
 
 ### 4.6.2 PMOS Error Amplifier
 
-A two-stage opamp with a **PMOS differential input stage** provides sufficient gain and biasing at low supply voltages (see `images/fig4.8-bgr-error-amplifier.png`). The first stage uses a PMOS differential pair with an NMOS current-mirror load. PMOS input devices allow the input common-mode voltage to operate close to ground which is appropriate given the BGR's low `VBE`-level signals.
+A two-stage opamp with a **PMOS differential input stage** provides sufficient gain and biasing at low supply voltages (see [BGR Error Amplifier](../images/4.8-PMOS_EA.png)). The first stage uses a PMOS differential pair with an NMOS current-mirror load. PMOS input devices allow the input common-mode voltage to operate close to ground which is appropriate given the BGR's low `VBE`-level signals.
 
-**Measured performance** (see `images/fig4.9-bgr-eaamp-frequency-response.png`, `images/fig4.10-bgr-eaamp-cmrr.png`):
+**Measured performance** (see [Frequency Response of BGR Error Amplifier](../images/4.9-PMOS_Gain.png) and 
+[Common-Mode Rejection Ratio](../images/4.10-PMOS_CMRR.png)):
 
 | Parameter | Value |
 |---|---|
@@ -126,4 +129,4 @@ where `∂VT/∂T` = 0.0862 mV/K, `∂VBE1/∂T` ≈ -1.8 mV/K, `N` = 8.
 
 ### 4.6.4 BGR Operation
 
-Temperature independence is achieved by summing the CTAT and PTAT currents. A temperature sweep confirms a stable reference voltage of approximately **800.6 mV** across the swept range (see `images/fig4.11-temperature-sweep.png`).
+Temperature independence is achieved by summing the CTAT and PTAT currents. A temperature sweep confirms a stable reference voltage of approximately **800.6 mV** across the swept range (see [Temperature Sweep](../images/4.11-BGR_Final_output.png)).
