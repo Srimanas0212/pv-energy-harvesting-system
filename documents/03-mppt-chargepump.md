@@ -71,7 +71,8 @@ The charge pump is implemented as a **voltage doubler** circuit to boost the PV 
 
 ### 3.5.1 Operating Principle
 
-Charge is moved between capacitors via switching action, using complementary clock signals for efficient energy transfer ![Voltage Doubler Circuit](../images/3.3-Doubler.png)
+Charge is moved between capacitors via switching action, using complementary clock signals for efficient energy transfer 
+![Voltage Doubler Circuit](../images/3.3-Doubler.png)
 *Figure 3.3: Voltage Doubler Circuit*
 
 ### 3.5.2 Circuit Implementation
