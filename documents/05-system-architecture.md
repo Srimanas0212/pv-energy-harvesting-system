@@ -19,7 +19,7 @@ Energy conversion proceeds sequentially: produce → optimize → boost → regu
 
 ## 5.3 Functional Interconnection of Blocks
 
-See `images/fig5.1-integrated-system.png` for the full integrated schematic (implemented in Cadence Virtuoso).
+See [the Block Diagram](../images/5.1-Block_Diagram.png) and for full integrated schematic (implemented in Cadence Virtuoso) [Integrated Solar Energy Harvesting System](../images/5.2-Complete_Schematic.png).
 
 - The **PV cell** is the primary power source, producing voltage and current dependent on irradiance and temperature.
 - The **MPPT controller** takes measured PV voltage/current and environmental parameters, predicts the maximum-power operating voltage, and generates a corresponding duty cycle.
