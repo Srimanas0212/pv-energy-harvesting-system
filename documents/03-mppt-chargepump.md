@@ -22,12 +22,8 @@ A **Verilog-A single-diode-equivalent model** was developed for the PV cell, cap
 - Resistive losses
 - Current-voltage nonlinearity
 
-The PV cell's voltage and current outputs feed the MPPT control algorithm; PV current is sensed via a small sensing resistor. The model was implemented and validated in the Cadence environment 
-[Photovoltaic Cell Model](../images/3.1-PV.png)
-*Figure 3.1: Photovoltaic Cell Model* 
-
-[Output Characteristics of Photovoltaic Cell](../images/3.2-PV_plot.png)
-*Figure 3.2: Output Characteristics of Photovoltaic Cell*
+The PV cell's voltage and current outputs feed the MPPT control algorithm; PV current is sensed via a small sensing resistor. The model was implemented and validated in the Cadence environment as shown in
+[Photovoltaic Cell Model](../images/3.1-PV.png) and the [Output Characteristics of Photovoltaic Cell](../images/3.2-PV_plot.png)
 
 ### 3.3.1 Dataset and Model Development
 
@@ -71,9 +67,8 @@ The charge pump is implemented as a **voltage doubler** circuit to boost the PV 
 
 ### 3.5.1 Operating Principle
 
-Charge is moved between capacitors via switching action, using complementary clock signals for efficient energy transfer 
-[Voltage Doubler Circuit](../images/3.3-Doubler.png)
-*Figure 3.3: Voltage Doubler Circuit*
+Charge is moved between capacitors via switching action, using complementary clock signals for efficient energy transfer as shown in the schematic [Voltage Doubler Circuit](../images/3.3-Doubler.png)
+
 
 ### 3.5.2 Circuit Implementation
 
@@ -86,7 +81,7 @@ Composed of:
 
 The charge pump output voltage exceeds the PV input voltage and is used to drive low-voltage electronics. Efficiency depends on switching rate, loading, and capacitance.
 
-**Result**: an input voltage of ~2 V is boosted to ~3.27 V using complementary clock signals [Output Characteristics of Voltage Doubler Circuit](../images/3.4-Doubler_Plot.png)
+**Result**: an input voltage of ~2 V is boosted to ~3.27 V using complementary clock signals as shown in the [Output Characteristics of Voltage Doubler Circuit](../images/3.4-Doubler_Plot.png)
 *Figure 3.4: Output Characteristics of Voltage Doubler Circuit*
 
 ## 3.6 Integration of System Components
