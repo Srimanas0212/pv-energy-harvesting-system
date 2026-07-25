@@ -82,7 +82,6 @@ Composed of:
 The charge pump output voltage exceeds the PV input voltage and is used to drive low-voltage electronics. Efficiency depends on switching rate, loading, and capacitance.
 
 **Result**: an input voltage of ~2 V is boosted to ~3.27 V using complementary clock signals as shown in the [Output Characteristics of Voltage Doubler Circuit](../images/3.4-Doubler_Plot.png)
-*Figure 3.4: Output Characteristics of Voltage Doubler Circuit*
 
 ## 3.6 Integration of System Components
 
